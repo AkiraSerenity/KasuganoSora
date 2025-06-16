@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasugano Sora - Informasi Karakter Rinci & Cerita Yosuga no Sora</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Menggunakan font Roboto dari Google Fonts */
+            line-height: 1.6;
+            margin: 0; /* Menghilangkan margin default body */
+            background-color: #f0f2f5; /* Latar belakang body abu-abu terang */
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER inspired by ScalaCube banner */
+        .header {
+            background-color: #2a2a2a; /* Warna latar belakang gelap */
+            background-image: linear-gradient(to right, #4a4a4a, #2a2a2a); /* Gradien gelap */
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden; /* Untuk efek overlay */
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://via.placeholder.com/1200x200/4a4a4a/ffffff?text=Background+Pattern'); /* Placeholder untuk pattern atau grafik */
+            background-size: cover;
+            opacity: 0.1; /* Transparansi overlay */
+            pointer-events: none;
+        }
+        .header h1 {
+            color: #ffffff; /* Judul header putih */
+            font-size: 3em; /* Ukuran lebih besar */
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            position: relative; /* Agar di atas pseudo-element */
+            z-index: 1;
+        }
+        .header p {
+            font-size: 1.1em;
+            color: #ccc;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .header .main-button {
+            display: inline-block;
+            background-color: #e65100; /* Warna oranye terang untuk tombol */
+            color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+        .header .main-button:hover {
+            background-color: #ff6f00;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 30px auto; /* Memberi jarak dari header/footer */
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #e65100; /* Warna oranye gelap untuk sub-judul */
+            font-size: 1.6em;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #f0f0f0; /* Garis bawah abu-abu terang */
+        }
+        .character-info img {
+            display: block;
+            margin: 0 auto 25px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .character-info img:hover {
+            transform: scale(1.01);
+        }
+        .info-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: baseline;
+        }
+        .info-item strong {
+            flex-shrink: 0;
+            width: 160px;
+            color: #444; /* Warna label sedikit lebih gelap */
+            font-size: 1em;
+            padding-right: 10px;
+        }
+        .info-item span {
+            flex-grow: 1;
+            font-size: 1em;
+        }
+        p {
+            text-align: justify;
+            margin-bottom: 0.8em;
+            font-size: 0.98em;
+        }
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 0.8em;
+        }
+        ul li {
+            margin-bottom: 6px;
+            font-size: 0.98em;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(230, 81, 0, 0.75), rgba(0, 0, 0, 0)); /* Garis oranye gradien */
+            margin: 30px 0;
+        }
+        .note {
+            background-color: #fff3e0; /* Oranye sangat muda */
+            border-left: 5px solid #ff9800;
+            padding: 12px;
+            margin-top: 20px;
+            border-radius: 5px;
+            color: #333;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+
+        /* Footer - simple but consistent with theme */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #2a2a2a; /* Warna gelap konsisten dengan header */
+            color: #ccc;
+            font-size: 0.85em;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+        .footer a {
+            color: #ff9800; /* Link oranye */
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Birza ❤ Sora</h1>
+        <p></p>
+    </div>
+
+    <div class="container">
+        <h2 style="text-align: center;">Informasi Karakter: Kasugano Sora (春日野 穹)</h2>
+        <div class="character-info">
+            <img id="sora-image" src="https://cs11.pikabu.ru/post_img/big/2018/07/25/1/1532470420118136013.jpg" alt="Visual Kasugano Sora dari Visual Novel">
+            <p id="image-caption" style="text-align: center; font-style: italic; color: #777; margin-top: -15px; font-size: 0.9em;">-</p>
+
+            <h2>Detail Pribadi</h2>
+            <div class="info-item">
+                <strong>Nama Lengkap:</strong> <span id="nama-lengkap"></span>
+            </div>
+            <div class="info-item">
+                <strong>Kanji:</strong> <span id="kanji"></span>
+            </div>
+            <div class="info-item">
+                <strong>Ulang Tahun:</strong> <span id="ulang-tahun"></span>
+            </div>
+            <div class="info-item">
+                <strong>Zodiak:</strong> <span id="zodiak"></span>
+            </div>
+            <div class="info-item">
+                <strong>Golongan Darah:</strong> <span id="golongan-darah"></span>
+            </div>
+            <div class="info-item">
+                <strong>Tinggi Badan:</strong> <span id="tinggi-badan"></span>
+            </div>
+            <div class="info-item">
+                <strong>Warna Rambut:</strong> <span id="warna-rambut"></span>
+            </div>
+            <div class="info-item">
+                <strong>Warna Mata:</strong> <span id="warna-mata"></span>
+            </div>
+            <div class="info-item">
+                <strong>Pengisi Suara (Seiyuu):</strong> <span id="seiyuu"></span>
+            </div>
+
+            <h2>Latar Belakang & Sejarah</h2>
+            <p id="latar-belakang"></p>
+            <p id="detail-latar-belakang"></p>
+
+            <h2>Kepribadian & Sifat</h2>
+            <p id="kepribadian"></p>
+            <ul>
+                <li><strong id="sifat-pendiam-introvert"></strong></li>
+                <li><strong id="sifat-ketergantungan"></strong></li>
+                <li><strong id="sifat-posesif"></strong></li>
+                <li><strong id="sifat-malas"></strong></li>
+                <li><strong id="sifat-emosional-rapuh"></strong></li>
+            </ul>
+
+            <h2>Kebiasaan & Kegemaran</h2>
+            <ul>
+                <li><strong id="kebiasaan-makanan"></strong></li>
+                <li><strong id="kebiasaan-hobi"></strong></li>
+                <li><strong id="kebiasaan-boneka"></strong></li>
+                <li><strong id="kebiasaan-tidur"></strong></li>
+            </ul>
+
+            <h2>Hubungan Kunci</h2>
+            <ul>
+                <li><strong id="hubungan-haruka"></strong></li>
+                <li><strong id="hubungan-lain"></strong></li>
+            </ul>
+
+            <hr>
+            <h2>Cerita Visual Novel: Yosuga no Sora</h2>
+            <p id="cerita-vn-pengantar"></p>
+            <p id="cerita-vn-alur"></p>
+            <p id="cerita-vn-tema"></p>
+            <p id="cerita-vn-pilihan"></p>
+
+            <hr>
+            <h2>Peran Kasugano Sora dalam Visual Novel</h2>
+            <p id="peran-vn-intro"></p>
+            <p id="peran-vn-arc"></p>
+            <p id="peran-vn-tema-sora"></p>
+
+            <div class="note">
+                Peringatan: Kasugano Sora adalah istri Birza
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; Kasugano Sora. </p>
+        <p>Dibuat oleh Birza untuk Sora.</p>
+    </div>
+
+    <script>
+        // Data karakter Kasugano Sora (lebih rinci)
+        const soraData = {
+            namaLengkap: "Kasugano Sora",
+            kanji: "春日野 穹",
+            ulangTahun: "5 Februari",
+            zodiak: "Aquarius",
+            golonganDarah: "A",
+            tinggiBadan: "152 cm",
+            warnaRambut: "Putih keperakan (Platinum Blonde / Silver White)",
+            warnaMata: "Biru langit yang jernih",
+            seiyuu: "Hiroko Taguchi",
+
+            latarBelakang: "Sora adalah adik kembar dari Kasugano Haruka, meskipun seringkali terlihat lebih muda dan lebih rapuh. Sejak lahir, ia menderita kondisi kesehatan yang sangat lemah, menghabuskannya sering menghabiskan waktu di rumah sakit dan membatasi interaksi sosialnya.",
+            detailLatarBelakang: "Kesehatan yang buruk ini membuatnya sering terisolasi dari dunia luar dan bergantung penuh pada Haruka. Setelah kematian tragis kedua orang tua mereka dalam kecelakaan, Sora dan Haruka pindah ke desa terpencil Okukozome, tempat kakek-nenek mereka dulu tinggal. Lingkungan baru ini, meskipun damai, juga menjadi panggung bagi pengembangan hubungan mereka yang rumit dan tabu.",
+
+            kepribadian: "Sora adalah karakter yang kompleks dengan kepribadian yang cenderung kontradiktif.",
+            sifatPendiamIntrovert: "Pendiam & Introvert: Dia jarang berbicara, seringkali lebih memilih berkomunikasi melalui ekspresi wajah atau gerak-gerik. Dia juga canggung dalam bersosialisasi dan tidak memiliki banyak teman di luar Haruka.",
+            sifatKetergantungan: "Sangat Bergantung: Ketergantungannya pada Haruka sangat ekstrem, terutama karena kondisi kesehatannya. Dia melihat Haruka sebagai satu-satunya penopang dan dunianya.",
+            sifatPosesif: "Posesif: Dia menunjukkan kecemburuan yang kuat dan sifat posesif terhadap Haruka, tidak suka jika Haruka berinteraksi terlalu dekat dengan gadis lain.",
+            sifatMalas: "Malas & Suka Mengeluh: Meskipun cerdas, Sora cenderung malas dalam melakukan pekerjaan rumah tangga dan sering mengeluh. Dia lebih suka menghabiskan waktu dengan membaca manga atau tidur siang.",
+            sifatEmosionalRapuh: "Emosional & Rapuh: Di balik fasad dinginnya, Sora sangat emosional dan rapuh. Dia mudah terluka dan sensitif terhadap penolakan atau perasaan ditinggalkan.",
+
+            kebiasaanMakanan: "Makanan Instan & Manis: Dia memiliki preferensi yang kuat untuk makanan instan, terutama mie instan, dan sangat menyukai makanan manis.",
+            kebiasaanHobi: "Menonton Langit & Manga: Hobi favoritnya adalah melihat langit dari jendela atau beranda, dan membaca manga.",
+            kebiasaanBoneka: "Boneka Kelinci: Dia selalu terlihat memegang boneka kelinci berwarna putih (disebut 'Shirokuma' atau 'Kuma-san') yang menjadi teman setianya dan simbol ketergantungan.nya",
+            kebiasaanTidur: "Tidur Siang: Sering ditemukan tidur siang di tempat-tempat yang tidak biasa.",
+
+            hubunganHaruka: "Kasugano Haruka (Kakak Kembar): Hubungan inti dari keseluruhan cerita. Mereka memiliki ikatan yang sangat dalam, yang berkembang menjadi romansa inses setelah kematian orang tua mereka. Ini adalah hubungan yang mendominasi karakternya dan mendorong sebagian besar konflik dan perkembangan plot.",
+            hubunganLain: "Kazuha Migiwa & Akira Amatsume: Meskipun ada interaksi, Sora cenderung menjaga jarak dan menunjukkan kecemburuan terhadap mereka yang mendekati Haruka.",
+
+            peranVnIntro: "Kasugano Sora adalah salah satu heroine utama dan mungkin yang paling ikonik dalam visual novel 'Yosuga no Sora'. Rutenya (jalur cerita spesifiknya) adalah rute 'canon' yang paling dikenal dan sering dianggap sebagai inti cerita oleh para penggemar.",
+            peranVnArc: "Dalam rutenya, cerita berpusat pada perkembangan hubungan antara Sora dan Haruka, yang melewati batas-batas moral dan sosial. Visual novel ini secara eksplisit menggambarkan romansa inses di antara mereka, mengeksplorasi sisi emosional, psikologis, dan tantangan yang mereka hadapi dari masyarakat.",
+            peranVnTemaSora: "Sora mewakili tema sentral dari kebebasan, keterikatan, dan tabu dalam seri ini. Penampilannya yang khas (rambut putih panjang, gaun putih, pita hitam, dan boneka kelinci) telah menjadi citra yang melekat pada franchise ini.",
+
+            // Cerita Visual Novel Yosuga no Sora
+            ceritaVnPengantar: "Yosuga no Sora (ヨスガノソラ) adalah visual novel dewasa Jepang yang dikembangkan oleh Sphere, dirilis pada tahun 2008. Kisahnya berpusat pada Kasugano Haruka dan adik kembarnya, Sora, yang pindah ke sebuah desa terpencil setelah kehilangan kedua orang tua mereka dalam kecelakaan. Mereka pindah ke rumah lama kakek-nenek mereka, sebuah tempat penuh kenangan masa kecil.",
+            ceritaVnAlur: "Alur cerita Yosuga no Sora sangat non-linier, khas visual novel, di mana pemain membuat pilihan yang mengarah ke rute cerita yang berbeda, masing-masing berfokus pada salah satu heroine utama (Sora, Akira, Kazuha, Nao). Setiap rute mengeksplorasi hubungan Haruka dengan karakter yang dipilih, seringkali menghadapi tantangan moral, sosial, dan emosional.",
+            ceritaVnTema: "Tema utama yang dieksplorasi dalam visual novel ini adalah cinta yang terlarang, isolasi, ketergantungan emosional, dan kebebasan untuk memilih jalan hidup sendiri terlepas dari norma masyarakat. Ini adalah narasi yang berani dan seringkali kontroversial yang memicu banyak diskusi di kalangan penggemar.",
+            ceritaVnPilihan: "Meskipun ada beberapa rute, rute Sora seringkali dianggap sebagai 'rute sejati' atau yang paling menonjol karena eksplorasinya yang mendalam terhadap hubungan inses antara saudara kembar, dan konsekuensi psikologis serta sosialnya."
+        };
+
+        // Mengisi data ke HTML
+        document.getElementById('nama-lengkap').textContent = soraData.namaLengkap;
+        document.getElementById('kanji').textContent = soraData.kanji;
+        document.getElementById('ulang-tahun').textContent = soraData.ulangTahun;
+        document.getElementById('zodiak').textContent = soraData.zodiak;
+        document.getElementById('golongan-darah').textContent = soraData.golonganDarah;
+        document.getElementById('tinggi-badan').textContent = soraData.tinggiBadan;
+        document.getElementById('warna-rambut').textContent = soraData.warnaRambut;
+        document.getElementById('warna-mata').textContent = soraData.warnaMata;
+        document.getElementById('seiyuu').textContent = soraData.seiyuu;
+
+        document.getElementById('latar-belakang').textContent = soraData.latarBelakang;
+        document.getElementById('detail-latar-belakang').textContent = soraData.detailLatarBelakang;
+
+        document.getElementById('kepribadian').textContent = soraData.kepribadian;
+        document.getElementById('sifat-pendiam-introvert').textContent = soraData.sifatPendiamIntrovert;
+        document.getElementById('sifat-ketergantungan').textContent = soraData.sifatKetergantungan;
+        document.getElementById('sifat-posesif').textContent = soraData.sifatPosesif;
+        document.getElementById('sifat-malas').textContent = soraData.sifatMalas;
+        document.getElementById('sifat-emosional-rapuh').textContent = soraData.sifatEmosionalRapuh;
+
+        document.getElementById('kebiasaan-makanan').textContent = soraData.kebiasaanMakanan;
+        document.getElementById('kebiasaan-hobi').textContent = soraData.kebiasaanHobi;
+        document.getElementById('kebiasaan-boneka').textContent = soraData.kebiasaanBoneka;
+        document.getElementById('kebiasaan-tidur').textContent = soraData.kebiasaanTidur;
+
+        document.getElementById('hubungan-haruka').textContent = soraData.hubunganHaruka;
+        document.getElementById('hubungan-lain').textContent = soraData.hubunganLain;
+
+        document.getElementById('peran-vn-intro').textContent = soraData.peranVnIntro;
+        document.getElementById('peran-vn-arc').textContent = soraData.peranVnArc;
+        document.getElementById('peran-vn-tema-sora').textContent = soraData.peranVnTemaSora;
+
+        // Cerita Yosuga no Sora
+        document.getElementById('cerita-vn-pengantar').textContent = soraData.ceritaVnPengantar;
+        document.getElementById('cerita-vn-alur').textContent = soraData.ceritaVnAlur;
+        document.getElementById('cerita-vn-tema').textContent = soraData.ceritaVnTema;
+        document.getElementById('cerita-vn-pilihan').textContent = soraData.ceritaVnPilihan;
+
+
+        // Ganti URL gambar di sini
+        // Contoh: document.getElementById('sora-image').src = 'url_gambar_sora_anda.jpg';
+        // Atau: document.getElementById('sora-image').src = 'https://example.com/kasugano_sora_visual_novel.png';
+    </script>
+</body>
+</html>
